@@ -49,5 +49,51 @@ namespace TestProject
             }
             Assert.IsTrue(fact);
         }
+        [TestMethod]
+        public void TestMethodEqualResult()
+        {
+            int fact = 114146;
+            int expected = Calculation.GetQuantityForProduct(3, 1, 15, 20, 45);
+            Assert.AreEqual(fact, expected);
+        }
+
+        [TestMethod]
+        public void TestMethodNotEqualResult()
+        {
+            int fact = 1000;
+            int expected = Calculation.GetQuantityForProduct(3, 1, 15, 20, 45);
+            Assert.AreNotEqual(fact, expected);
+        }
+        [TestMethod]
+        public void TestMethodEqualResultIncorrectMaterialType()
+        {
+            int fact = -1;
+            int expected = Calculation.GetQuantityForProduct(0, 1, 15, 20, 45);
+            Assert.AreEqual(fact, expected);
+        }
+
+        [TestMethod]
+        public void TestMethodNotEqualResultIncorrectMaterialType()
+        {
+            int fact = 0;
+            int expected = Calculation.GetQuantityForProduct(0, 1, 15, 20, 45);
+            Assert.AreNotEqual(fact, expected);
+        }
+
+        [TestMethod]
+        public void TestMethodEqualResultIncorrectProductType()
+        {
+            int fact = -1;
+            int expected = Calculation.GetQuantityForProduct(3, 0, 15, 20, 45);
+            Assert.AreEqual(fact, expected);
+        }
+
+        [TestMethod]
+        public void TestMethodNotEqualResultIncorrectProductType()
+        {
+            int fact = 1;
+            int expected = Calculation.GetQuantityForProduct(3, 0, 15, 20, 45);
+            Assert.AreNotEqual(fact, expected);
+        }
     }
 }
